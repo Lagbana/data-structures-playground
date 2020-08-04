@@ -1,41 +1,49 @@
 // Create Stacks class
 
 // let items = []
-export default class Stack {
+class Stack {
   constructor () {
     this.count = 0
-    this.items = []
+    this.items = new WeakMap().set(this, [])
   }
 
   push (elements) {
-    this.items.push(elements)
+    const mapArray = this.items.get(this)
+    mapArray.push(elements)
   }
 
   pop () {
-    const removedItem = this.items.pop()
+    const mapArray = this.items.get(this)
+    const removedItem = mapArray.pop()
     return removedItem
   }
 
   peek () {
-    const topItem = this.items[this.items.length - 1]
+    const mapArray = this.items.get(this)
+    const topItem = mapArray[mapArray.length - 1]
     return topItem
   }
 
   isEmpty () {
-    const bool = this.items.length === 0
+    const mapArray = this.items.get(this)
+    const bool = mapArray.length === 0
     return bool
   }
 
   clear () {
-    this.items = []
+    this.items.set(this, [])
   }
 
   size () {
-    const stackSize = this.items.length
+    const mapArray = this.items.get(this)
+    const stackSize = mapArray.length
     return stackSize
-    }
-    
-    print() {
-        console.log(`Current Stack: ${String(items)}`)
-    }
+  }
+
+  print () {
+    const mapArray = this.items.get(this)
+    console.log(`Current Stack: ${String(mapArray)}`)
+  }
 }
+
+module.exports = Stack

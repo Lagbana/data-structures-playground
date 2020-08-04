@@ -1,8 +1,8 @@
-# data-structures-playground
+# Data Structure Playground
+    - Explore various data structures and test data structure methods
 
 
-
-Data Structures
+## Data Structures
 
 - Array
 - Stack
