@@ -44,6 +44,11 @@ class Stack {
     const mapArray = this.items.get(this)
     console.log(`Current Stack: ${String(mapArray)}`)
   }
+
+  getStack () {
+    const mapArray = this.items.get(this)
+    return mapArray
+  }
 }
 
 module.exports = Stack
