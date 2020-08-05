@@ -22,13 +22,10 @@ function baseConverter (decNumber, base) {
     remainder = Math.floor(decNumber % base)
     decNumber = Math.floor(decNumber / base)
     remStack.push(remainder)
-  }
-
-  while (!remStack.isEmpty()) {
-    baseString += digits[remStack.pop()]
+    baseString = digits[remStack.pop()] + baseString
   }
 
   return baseString
 }
 
-console.log(baseConverter(100345, 2))
+console.log(baseConverter(6827337, 12))
