@@ -1,8 +1,2 @@
 # Data Structure Playground
-    - Explore various data structures and test data structure methods
-
-
-## Data Structures
-
-- Array
-- Stack
+    - Recreate data structures, explore various algorithms, and solve problems via leetcode
